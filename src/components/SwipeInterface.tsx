@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ProductCard } from './ProductCard';
+import { CommentModal } from './CommentModal';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
 
@@ -54,6 +55,7 @@ export function SwipeInterface() {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState<'left' | 'right' | null>(null);
+  const [commentModalOpen, setCommentModalOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
@@ -223,12 +225,7 @@ export function SwipeInterface() {
           {...currentProduct}
           onLike={() => handleSwipe('right')}
           onSave={() => handleSwipe('right')}
-          onComment={() => {
-            toast({
-              description: "Comments coming soon! 💬",
-              duration: 2000,
-            });
-          }}
+          onComment={() => setCommentModalOpen(true)}
         />
       </div>
 
@@ -240,6 +237,14 @@ export function SwipeInterface() {
           </p>
         </div>
       )}
+
+      {/* Comment Modal */}
+      <CommentModal
+        isOpen={commentModalOpen}
+        onClose={() => setCommentModalOpen(false)}
+        productId={currentProduct?.id || ''}
+        productName={currentProduct?.name || ''}
+      />
     </div>
   );
 }

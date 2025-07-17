@@ -129,6 +129,14 @@ export default {
 					'50%': {
 						boxShadow: '0 0 40px hsl(280 100% 70% / 0.6)'
 					}
+				},
+				'slide-up': {
+					'0%': {
+						transform: 'translateY(100%)'
+					},
+					'100%': {
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
@@ -137,7 +145,8 @@ export default {
 				'swipe-left': 'swipe-left 0.3s ease-out forwards',
 				'swipe-right': 'swipe-right 0.3s ease-out forwards',
 				'bounce-in': 'bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-				'glow-pulse': 'glow-pulse 2s ease-in-out infinite'
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'slide-up': 'slide-up 0.3s ease-out'
 			}
 		}
 	},
