@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { SwipeInterface } from '@/components/SwipeInterface';
 import { BottomNav } from '@/components/BottomNav';
 import { ProductDetail } from '@/components/ProductDetail';
+import { EventsInterface } from '@/components/EventsInterface';
 import { Badge } from '@/components/ui/badge';
 import { Grid3X3, Users, Bell, User, Sparkles } from 'lucide-react';
 
@@ -66,51 +67,8 @@ const Index = () => {
 
       case 'community':
         return (
-          <div className="min-h-screen bg-background pt-16 pb-20">
-            <div className="p-6">
-              <h1 className="text-2xl font-bold mb-6">Community Hub</h1>
-              <div className="space-y-4">
-                <div className="swipe-card p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 gradient-primary rounded-full flex items-center justify-center text-white font-bold">
-                      B
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">BrandStudio</h3>
-                      <p className="text-sm text-muted-foreground">Design Contest</p>
-                    </div>
-                  </div>
-                  <h4 className="font-bold mb-2">🧵 Summer Collection Design Contest</h4>
-                  <p className="text-sm text-muted-foreground mb-3">Win ₹50,000 + Feature your design</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-muted-foreground">⏳ 5 days left</span>
-                    <button className="gradient-primary text-white px-4 py-2 rounded-lg text-sm font-medium">
-                      Apply Now
-                    </button>
-                  </div>
-                </div>
-                
-                <div className="swipe-card p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 gradient-accent rounded-full flex items-center justify-center text-white font-bold">
-                      F
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">FashionForward</h3>
-                      <p className="text-sm text-muted-foreground">Model Casting</p>
-                    </div>
-                  </div>
-                  <h4 className="font-bold mb-2">📸 Street Style Photoshoot</h4>
-                  <p className="text-sm text-muted-foreground mb-3">Looking for 5 models for urban collection</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-muted-foreground">⏳ 2 days left</span>
-                    <button className="gradient-accent text-white px-4 py-2 rounded-lg text-sm font-medium">
-                      Submit
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="pt-16 pb-20">
+            <EventsInterface />
           </div>
         );
 
