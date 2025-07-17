@@ -2,41 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Gen Z Fashion Discovery Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark theme base colors */
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 240 7% 8%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 240 7% 8%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Vibrant accent system */
+    --primary: 280 100% 70%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 240 7% 15%;
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 6% 12%;
+    --muted-foreground: 240 5% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 320 90% 65%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 240 6% 20%;
+    --input: 240 6% 15%;
+    --ring: 280 100% 70%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Custom fashion app variables */
+    --gradient-primary: linear-gradient(135deg, hsl(280 100% 70%), hsl(320 90% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 100% 60%), hsl(280 100% 70%));
+    --gradient-accent: linear-gradient(135deg, hsl(320 90% 65%), hsl(340 85% 60%));
+    --gradient-dark: linear-gradient(135deg, hsl(240 10% 4%), hsl(240 7% 8%));
+    
+    /* Glow effects */
+    --glow-primary: 0 0 40px hsl(280 100% 70% / 0.3);
+    --glow-accent: 0 0 40px hsl(320 90% 65% / 0.3);
+    --glow-subtle: 0 0 20px hsl(280 100% 70% / 0.1);
+    
+    /* Glassmorphism */
+    --glass-bg: hsl(240 7% 8% / 0.8);
+    --glass-border: hsl(240 6% 20% / 0.5);
+    
+    /* Animation timings */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +121,67 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Custom utility classes for the fashion app */
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-dark {
+    background: var(--gradient-dark);
+  }
+  
+  .glass-bg {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+  }
+  
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+  
+  .glow-subtle {
+    box-shadow: var(--glow-subtle);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
+  
+  .swipe-card {
+    @apply relative overflow-hidden rounded-3xl glass-bg;
+    @apply transition-spring;
+  }
+  
+  .action-button {
+    @apply relative flex items-center justify-center w-12 h-12 rounded-full;
+    @apply glass-bg backdrop-blur-md transition-bounce;
+    @apply hover:scale-110 active:scale-95;
   }
 }
