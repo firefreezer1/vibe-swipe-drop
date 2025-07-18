@@ -11,7 +11,7 @@ const navItems = [
   { id: 'home', icon: Home, label: 'Home' },
   { id: 'categories', icon: Grid3X3, label: 'Categories' },
   { id: 'community', icon: Users, label: 'Community' },
-  { id: 'notifications', icon: Bell, label: 'Notifications' },
+  { id: 'friends', icon: Users, label: 'Friends' },
   { id: 'profile', icon: User, label: 'Profile' },
 ];
 
