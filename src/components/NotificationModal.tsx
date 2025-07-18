@@ -67,7 +67,7 @@ export function NotificationModal({ isOpen, onClose }: NotificationModalProps) {
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
       
       {/* Modal */}
-      <div className="absolute top-4 right-4 w-80 max-h-96 glass-bg border border-border/50 rounded-2xl shadow-elegant animate-slide-in-right">
+      <div className="absolute top-4 right-4 w-80 sm:w-96 max-w-[calc(100vw-2rem)] max-h-96 glass-bg border border-border/50 rounded-2xl shadow-elegant animate-slide-in-right">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-border/30">
           <div className="flex items-center gap-2">
